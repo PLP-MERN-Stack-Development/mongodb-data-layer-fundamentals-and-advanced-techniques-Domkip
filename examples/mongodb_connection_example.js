@@ -1,5 +1,5 @@
 // Basic MongoDB Connection Example
-const { MongoClient } = require('mongodb');
+import { MongoClient } from 'mongodb';
 
 // Connection URI - replace with your MongoDB connection string if using Atlas
 const uri = 'mongodb://localhost:27017';
@@ -46,4 +46,4 @@ async function main() {
 }
 
 // Run the main function
-main().catch(console.error); 
+main().catch(console.error);

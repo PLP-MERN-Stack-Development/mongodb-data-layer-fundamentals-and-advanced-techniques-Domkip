@@ -15,5 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "mongodb": "^6.3.0"
-  }
-} 
+  },
+  "type": "module"
+}

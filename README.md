@@ -1,59 +1,50 @@
-# MongoDB Fundamentals - Week 1
+# How to Run
 
-## Setup Instructions
+## Prerequisites
 
-Before you begin this assignment, please make sure you have the following installed:
+- Install [Node.js](https://nodejs.org/)
+- Install [MongoDB Community Edition](https://www.mongodb.com/try/download/community) locally, or create a free [MongoDB Atlas](https://www.mongodb.com/atlas/database) cluster.
+- Clone this repository to your local machine.
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+## Setup
 
-### Node.js Package Setup
+1. Open a terminal and navigate to the project folder.
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. If using MongoDB Atlas, update the connection URI in `insert_books.js`:
+   ```js
+   // ...existing code...
+   const uri = 'your-mongodb-atlas-connection-string';
+   // ...existing code...
+   ```
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+## Running the Script
 
-```bash
-# Initialize a package.json file
-npm init -y
+1. Make sure MongoDB is running (locally or Atlas).
+2. Run the script to insert sample book data:
+   ```
+   node insert_books.js
+   ```
+   - If you converted to ES modules, use:
+     ```
+     node insert_books.mjs
+     ```
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+## Verifying Data
 
-## Assignment Overview
+- Open MongoDB Compass or connect with MongoDB Shell (`mongosh`).
+- Connect to your MongoDB server.
+- Find the `plp_bookstore` database and the `books` collection.
+- You should see the sample book documents inserted by the script.
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+## Troubleshooting
 
-## Submission
+- If you see a "require is not defined" error, ensure your `package.json` does not contain `"type": "module"` (unless using ES modules).
+- If using Atlas, ensure your IP is whitelisted and your connection string is correct.
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+## Additional Notes
 
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
-
-## Files Included
-
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
-
-## Requirements
-
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
-
-## Resources
-
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+- All queries for CRUD, advanced, and aggregation operations are in `queries.js`.
+- For performance testing, use the `explain()` method in MongoDB Shell or Compass.

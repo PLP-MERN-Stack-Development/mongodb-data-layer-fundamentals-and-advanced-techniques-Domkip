@@ -1,7 +1,7 @@
 // insert_books.js - Script to populate MongoDB with sample book data
 
 // Import MongoDB client
-const { MongoClient } = require('mongodb');
+import { MongoClient } from 'mongodb';
 
 // Connection URI (replace with your MongoDB connection string if using Atlas)
 const uri = 'mongodb://localhost:27017';
@@ -195,4 +195,4 @@ insertBooks().catch(console.error);
  *
  * 5. Find in-stock books:
  *    db.books.find({ in_stock: true })
- */ 
+ */
